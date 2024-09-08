@@ -1,0 +1,401 @@
+<index.html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>נופי בר - התקנת דשא סינטטי מקצועי</title><style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
+    
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Heebo', sans-serif;
+        direction: rtl;
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1.5em;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 0.5em;
+    }
+    
+    h1, h2, h3 {
+        margin-bottom: 0.5em;
+    }
+    
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2em;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        margin-top: 2em;
+    }
+    
+    .gallery, .home-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5em;
+        margin: 2em 0;
+    }
+    
+    .gallery img, .home-gallery img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery img:hover, .home-gallery img:hover {
+        transform: scale(1.05);
+    }
+    
+    .testimonials {
+        background-color: #e8f5e9;
+        padding: 2em;
+        border-radius: 8px;
+        margin: 2em 0;
+    }
+    
+    .testimonial {
+        background-color: white;
+        padding: 1.5em;
+        border-radius: 8px;
+        margin-bottom: 1em;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .contact-info {
+        text-align: center;
+        margin-top: 2em;
+        font-size: 1.2em;
+    }
+    
+    .contact-info a {
+        color: #4CAF50;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+    
+    .cta-button, .whatsapp-button {
+        display: inline-block;
+        background-color: #25D366;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 1em;
+        transition: background-color 0.3s ease;
+    }
+    
+    .cta-button:hover, .whatsapp-button:hover {
+        background-color: #128C7E;
+    }
+    
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 2em 0;
+    }
+    
+    .feature {
+        flex-basis: calc(33% - 2em);
+        margin-bottom: 2em;
+        padding: 1.5em;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .feature-icon {
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+        color: #4CAF50;
+    }
+    
+    .feature h4 {
+        color: #2E7D32;
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+    
+    .feature p {
+        color: #555;
+        font-size: 0.9em;
+    }
+    
+    .nav-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 1em;
+        flex-wrap: wrap;
+    }
+    
+    .nav-button {
+        padding: 12px 24px;
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .nav-button:hover {
+        background-color: #1976D2;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    
+    #gallery, #about-us {
+        display: none;
+    }
+    
+    .benefits-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1em;
+    }
+
+    .benefits-list li {
+        background-color: #e8f5e9;
+        padding: 1em;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .benefits-list li:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+        main {
+            padding: 1em;
+        }
+        
+        .feature {
+            flex-basis: calc(50% - 2em);
+        }
+        
+        .gallery, .home-gallery {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        .nav-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .nav-button {
+            width: 80%;
+            margin-bottom: 0.8em;
+        }
+
+        .benefits-list {
+            grid-template-columns: 1fr;
+        }
+        
+        .whatsapp-button {
+            bottom: 10px;
+            right: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .feature {
+            flex-basis: 100%;
+        }
+    }
+</style></head><body>
+    <header>
+        <img src="https://i.postimg.cc/rwNGZfSp/Screenshot-2024-09-08-191206.png" alt="לוגו נופי בר - עץ ירוק עם עלים" class="logo">
+        <h1>נופי בר - התקנת דשא סינטטי מקצועי</h1>
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="showSection('main-content')">דף הבית</button>
+            <button class="nav-button" onclick="showSection('gallery')">גלריה</button>
+            <button class="nav-button" onclick="showSection('about-us')">קצת עלינו</button>
+        </div>
+    </header>
+    
+    <main id="main-content">
+        <h2>ברוכים הבאים לנופי בר</h2>
+        <p>נופי בר היא החברה המובילה בתחום התקנת דשא סינטטי איכותי. אנו מתמחים בהתקנות מקצועיות לכל סוגי המרחבים - מגינות פרטיות ועד מגרשי ספורט ושטחים ציבוריים. עם ניסיון של למעלה מעשור, אנו גאים לספק פתרונות ירוקים ויפים שמשפרים את איכות החיים ומוסיפים ערך לכל מרחב.</p>
+        
+        <h3>מי אנחנו</h3>
+        <p>נופי בר הוקמה בשנת 2010 מתוך אהבה לנוף ירוק ורצון לספק פתרונות ידידותיים לסביבה. אנו מאמינים שכל בית ועסק ראויים לגינה יפה וירוקה, ללא הצורך בתחזוקה מרובה או בזבוז מים. הצוות שלנו מורכב ממומחים בתחום הגינון והנוף, עם ניסיון רב בהתקנת דשא סינטטי בכל רחבי הארץ.</p>
+
+        <h3>היתרונות של דשא סינטטי</h3>
+        <ul class="benefits-list">
+            <li>חסכון במים - אין צורך בהשקיה קבועה</li>
+            <li>תחזוקה מינימלית - חסכון בזמן ובכסף</li>
+            <li>מראה ירוק ורענן לאורך כל השנה</li>
+            <li>עמידות גבוהה בפני שחיקה ותנאי מזג האוויר</li>
+            <li>בטיחותי לילדים ולחיות מחמד</li>
+            <li>פתרון אידיאלי לאזורים עם מחסור במים</li>
+        </ul>
+        
+        <div class="home-gallery">
+            <img src="https://i.postimg.cc/QNKQZ8pw/photo-5-2024-09-08-19-11-27.jpg" alt="דשא סינטטי בחצר בית פרטי" width="300" height="250">
+            <img src="https://i.postimg.cc/jdzyCM3h/photo-6-2024-09-08-19-11-27.jpg" alt="גינה עם דשא סינטטי ושביל אבן" width="300" height="250">
+            <img src="https://i.postimg.cc/YSyWTZjt/photo-8-2024-09-08-19-11-27.jpg" alt="עץ זית בגינה עם דשא סינטטי" width="300" height="250">
+        </div>
+        
+        <h3>למה לבחור בנופי בר?</h3>
+        <div class="features">
+            <div class="feature" onmouseover="showDetails(this, 'איכות מעולה')">
+                <div class="feature-icon">🌿</div>
+                <h4>איכות מעולה</h4>
+                <p>דשא סינטטי עמיד ונראה טבעי</p>
+            </div>
+            <div class="feature" onmouseover="showDetails(this, 'מחירים תחרותיים')">
+                <div class="feature-icon">💰</div>
+                <h4>מחירים תחרותיים</h4>
+                <p>החל מ-150₪ למטר מרובע</p>
+            </div>
+            <div class="feature" onmouseover="showDetails(this, 'שירות מקצועי')">
+                <div class="feature-icon">👨‍🔧</div>
+                <h4>שירות מקצועי</h4>
+                <p>צוות מיומן עם ניסיון רב</p>
+            </div>
+            <div class="feature" onmouseover="showDetails(this, 'התאמה אישית')">
+                <div class="feature-icon">🎨</div>
+                <h4>התאמה אישית</h4>
+                <p>פתרונות לכל סוגי המרחבים</p>
+            </div>
+            <div class="feature" onmouseover="showDetails(this, 'אחריות מקיפה')">
+                <div class="feature-icon">🛡️</div>
+                <h4>אחריות מקיפה</h4>
+                <p>שקט נפשי לשנים קדימה</p>
+            </div>
+            <div class="feature" onmouseover="showDetails(this, 'תחזוקה קלה')">
+                <div class="feature-icon">🧹</div>
+                <h4>תחזוקה קלה</h4>
+                <p>חסכון בזמן ובמים</p>
+            </div>
+        </div>
+        
+        <div class="testimonials">
+            <h3>מה אומרים עלינו הלקוחות</h3>
+            <div class="testimonial">
+                <p>"ההחלטה להתקין דשא סינטטי של נופי בר שינתה את חיינו. החצר שלנו תמיד נראית מושלמת, ללא כל מאמץ מצדנו!"</p>
+                <strong>- משפחת כהן, תל אביב</strong>
+            </div>
+            <div class="testimonial">
+                <p>"השירות המקצועי והיחס האישי של הצוות היו יוצאי דופן. התוצאה עלתה על כל הציפיות שלנו!"</p>
+                <strong>- דני לוי, חיפה</strong>
+            </div>
+            <div class="testimonial">
+                <p>"כבעל עסק, החלטתי להתקין דשא סינטטי בחצר המשרד. זו הייתה השקעה מצוינת שהשביחה את הנכס ושיפרה את חווית העובדים."</p>
+                <strong>- רונית גל, ירושלים</strong>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h3>צרו איתנו קשר עוד היום</h3>
+            <p>לקבלת הצעת מחיר והתייעצות ללא התחייבות:</p>
+            <a href="tel:972528394499">052-839-4499</a>
+        </div>
+    </main>
+    
+    <div id="gallery" style="display:none;">
+        <h2>גלריית עבודות</h2>
+        <div class="gallery">
+            <img src="https://i.postimg.cc/YSyWTZjt/photo-8-2024-09-08-19-11-27.jpg" alt="דשא סינטטי בחצר בית פרטי" width="300" height="250">
+            <img src="https://i.postimg.cc/hPqdF94Q/photo-7-2024-09-08-19-11-27.jpg" alt="גינה עם דשא סינטטי ושביל אבן" width="300" height="250">
+            <img src="https://i.postimg.cc/jdzyCM3h/photo-6-2024-09-08-19-11-27.jpg" alt="עץ זית בגינה עם דשא סינטטי" width="300" height="250">
+            <img src="https://i.postimg.cc/QNKQZ8pw/photo-5-2024-09-08-19-11-27.jpg" alt="מרפסת עם דשא סינטטי ונוף עירוני" width="300" height="250">
+            <img src="https://i.postimg.cc/rwNGZfSp/Screenshot-2024-09-08-191206.png" alt="חצר אחורית עם דשא סינטטי ופינת ישיבה" width="300" height="250">
+            <img src="https://i.postimg.cc/prMpHHvM/photo-9-2024-09-08-19-11-27.jpg" alt="בריכה עם דשא סינטטי מסביב" width="300" height="250">
+            <img src="https://i.postimg.cc/jqyDhL6x/photo-4-2024-09-08-19-11-27.jpg" alt="דשא סינטטי בכניסה לבית מודרני" width="300" height="250">
+            <img src="https://i.postimg.cc/P5VJqZH4/photo-1-2024-09-08-19-11-27.jpg" alt="מבט קרוב על דשא סינטטי איכותי" width="300" height="250">
+        </div>
+    </div>
+    
+    <div id="about-us" style="display:none;">
+        <h2>קצת עלינו</h2>
+        <p>נופי בר הוקמה בשנת 2010 מתוך אהבה לנוף ירוק ורצון לספק פתרונות ידידותיים לסביבה. אנו מאמינים שכל בית ועסק ראויים לגינה יפה וירוקה, ללא הצורך בתחזוקה מרובה או בזבוז מים.</p>
+        <p>הצוות שלנו מורכב ממומחים בתחום הגינון והנוף, עם ניסיון רב בהתקנת דשא סינטטי בכל רחבי הארץ. אנו גאים לספק שירות מקצועי, אמין ואדיב לכל לקוחותינו, מהייעוץ הראשוני ועד להתקנה המושלמת.</p>
+        <p>בנופי בר, אנו משתמשים רק בחומרים האיכותיים ביותר, עמידים לאורך זמן ובטוחים לשימוש. הדשא הסינטטי שלנו מיוצר בטכנולוגיה מתקדמת, המדמה את המראה והמרקם של דשא טבעי באופן מושלם.</p>
+        
+        <h3>החזון שלנו</h3>
+        <p>החזון של נופי בר הוא להוביל את המהפכה הירוקה בישראל, תוך שמירה על איכות הסביבה וחיסכון במשאבים יקרי ערך. אנו שואפים ליצור מרחבים ירוקים ומזמינים בכל פינה, מבלי להתפשר על איכות או אסתטיקה.</p>
+        
+        <h3>הצוות המקצועי שלנו</h3>
+        <p>בנופי בר, אנו גאים בצוות המקצועי והמסור שלנו. הצוות כולל מומחי גינון, מעצבי נוף, וטכנאי התקנה מיומנים. כל חבר בצוות עובר הכשרה מקיפה ומתמשכת כדי להבטיח את רמת השירות הגבוהה ביותר.</p>
+        
+        <h3>המחויבות שלנו לאיכות</h3>
+        <p>בנופי בר, איכות היא ערך עליון. אנו בוחרים בקפידה את הספקים והחומרים שלנו, ומקפידים על תהליכי בקרת איכות קפדניים בכל שלב של העבודה. כל התקנה עוברת ביקורת סופית לפני מסירתה ללקוח, להבטחת שביעות רצון מלאה.</p>
+        
+        <h3>שירות לקוחות מעל ומעבר</h3>
+        <p>אנו מאמינים שהקשר עם הלקוח לא מסתיים עם סיום ההתקנה. צוות שירות הלקוחות שלנו זמין תמיד לכל שאלה, ייעוץ או תמיכה. אנו מספקים הדרכה מקיפה לתחזוקה נכונה של הדשא הסינטטי, ומציעים שירותי תחזוקה תקופתיים למי שמעוניין.</p>
+        
+        <h3>חדשנות וקיימות</h3>
+        <p>נופי בר נמצאת בחזית הטכנולוגיה בתחום הדשא הסינטטי. אנו משקיעים במחקר ופיתוח כדי להביא את החידושים האחרונים בתחום, תוך דגש על פתרונות ידידותיים לסביבה. הדשא הסינטטי שלנו מיוצר מחומרים ממוחזרים ככל האפשר, ואנו מתמקדים בשיטות עבודה בנות-קיימא.</p>
+    </div>
+    
+    <a href="https://wa.me/972528394499" class="whatsapp-button" target="_blank">שלח הודעת WhatsApp</a>
+    
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('gallery').style.display = 'none';
+            document.getElementById('about-us').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function showDetails(element, feature) {
+            let details = {
+                'איכות מעולה': 'הדשא הסינטטי שלנו מיוצר מחומרים איכותיים ועמידים, המדמים את המראה והמרקם של דשא טבעי בצורה מושלמת.',
+                'מחירים תחרותיים': 'אנו מציעים מחירים הוגנים ותחרותיים, עם אפשרויות מימון גמישות להתאמה לכל תקציב.',
+                'שירות מקצועי': 'הצוות שלנו מורכב ממומחים מנוסים שיספקו לכם שירות אדיב, מקצועי ואמין לאורך כל התהליך.',
+                'התאמה אישית': 'אנו מתאימים את הפתרון המושלם עבורכם, בהתחשב בצרכים הייחודיים של המרחב והשימוש המיועד.',
+                'אחריות מקיפה': 'אנו מספקים אחריות נרחבת על כל התקנה, כדי להבטיח את שביעות רצונכם לאורך זמן.',
+                'תחזוקה קלה': 'הדשא הסינטטי שלנו דורש מינימום תחזוקה, חוסך זמן, מים וכסף לאורך השנים.'
+            };
+            
+            element.querySelector('p').innerHTML = details[feature];
+        }
+    </script>
+</body></html>
